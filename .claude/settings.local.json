@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(flutter create *)",
+      "Read(//usr/local/bin/**)",
+      "Read(//Users/rusnoy/development/flutter/bin/**)",
+      "Read(//Users/rusnoy/**)",
+      "Bash(/Users/rusnoy/flutter/bin/dart analyze *)",
+      "Bash(/Users/rusnoy/flutter/bin/flutter pub *)"
+    ]
+  }
+}
