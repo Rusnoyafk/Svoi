@@ -30,7 +30,7 @@ Future<void> main() async {
     ProviderScope(
       // Передаємо готовий екземпляр prefs у провайдер
       overrides: [
-        sharedPreferencesProvider.overrideWithValue(prefs),
+        sharedPreferencesProvider.overrideWith((ref) => prefs),
       ],
       child: const SvoiApp(),
     ),
