@@ -9,7 +9,7 @@ enum GeoScope {
   String get label => switch (this) {
         GeoScope.city => 'Моє місто',
         GeoScope.country => 'Моя країна',
-        GeoScope.all => 'Усі українці',
+        GeoScope.all => 'Усі свої',
       };
 }
 
