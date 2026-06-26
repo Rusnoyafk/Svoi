@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'core/firebase/firebase_init.dart';
 import 'core/theme/app_theme.dart';
 import 'core/theme/theme_provider.dart';
 import 'features/home/presentation/home_screen.dart';
@@ -23,12 +24,14 @@ final bottomNavIndexProvider = NotifierProvider<BottomNavIndex, int>(
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  // Ініціалізуємо Firebase
+  await initFirebase();
+
   // Ініціалізуємо SharedPreferences до запуску UI
   final prefs = await SharedPreferences.getInstance();
 
   runApp(
     ProviderScope(
-      // Передаємо готовий екземпляр prefs у провайдер
       overrides: [
         sharedPreferencesProvider.overrideWith((ref) => prefs),
       ],
@@ -42,16 +45,12 @@ class SvoiApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // Спостерігаємо за поточним ThemeMode
     final themeMode = ref.watch(themeModeProvider);
 
     return MaterialApp(
       title: 'Свої',
-      // Світла тема на базі #6C4DE6
       theme: AppTheme.light,
-      // Темна тема на базі #6C4DE6
       darkTheme: AppTheme.dark,
-      // Системна / вибрана користувачем
       themeMode: themeMode,
       home: const MainShell(),
     );
