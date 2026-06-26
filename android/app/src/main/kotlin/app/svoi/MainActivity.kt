@@ -1,4 +1,4 @@
-package app.svoi.svoi
+package app.svoi
 
 import io.flutter.embedding.android.FlutterActivity
 
