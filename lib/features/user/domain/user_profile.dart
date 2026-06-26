@@ -11,8 +11,9 @@ class UserProfile {
   final String? country;
   final String? city;
 
-  /// Звідки родом (Україна)
+  /// Звідки родом (Україна) — область, район, місто/село
   final String? originOblast;
+  final String? originRaion;
   final String? originCity;
 
   /// Коротко про себе (до 200 символів)
@@ -35,6 +36,7 @@ class UserProfile {
     this.country,
     this.city,
     this.originOblast,
+    this.originRaion,
     this.originCity,
     this.bio,
     required this.role,
@@ -53,6 +55,7 @@ class UserProfile {
       country: data['country'] as String?,
       city: data['city'] as String?,
       originOblast: data['originOblast'] as String?,
+      originRaion: data['originRaion'] as String?,
       originCity: data['originCity'] as String?,
       bio: data['bio'] as String?,
       role: data['role'] as String? ?? 'user',
@@ -69,6 +72,7 @@ class UserProfile {
         'country': country,
         'city': city,
         'originOblast': originOblast,
+        'originRaion': originRaion,
         'originCity': originCity,
         'bio': bio,
         'role': role,
@@ -84,6 +88,7 @@ class UserProfile {
     String? country,
     String? city,
     String? originOblast,
+    String? originRaion,
     String? originCity,
     String? bio,
     String? role,
@@ -98,6 +103,7 @@ class UserProfile {
         country: country ?? this.country,
         city: city ?? this.city,
         originOblast: originOblast ?? this.originOblast,
+        originRaion: originRaion ?? this.originRaion,
         originCity: originCity ?? this.originCity,
         bio: bio ?? this.bio,
         role: role ?? this.role,
