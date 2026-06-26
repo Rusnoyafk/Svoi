@@ -103,14 +103,17 @@ class _ProfileBody extends ConsumerWidget {
         ],
 
         // ── Звідки я ──────────────────────────────────────────────────────
-        if (profile.originOblast != null || profile.originCity != null) ...[
+        if (profile.originOblast != null ||
+            profile.originRaion != null ||
+            profile.originCity != null) ...[
           _SectionCard(
             title: 'Звідки я',
             icon: Icons.home_outlined,
             child: Text(
               [
-                if (profile.originCity != null) profile.originCity!,
                 if (profile.originOblast != null) '${profile.originOblast!} обл.',
+                if (profile.originRaion != null) '${profile.originRaion!} р-н',
+                if (profile.originCity != null) profile.originCity!,
               ].join(', '),
               style: textTheme.bodyMedium,
             ),
@@ -122,7 +125,8 @@ class _ProfileBody extends ConsumerWidget {
         if ((profile.bio == null || profile.bio!.isEmpty) &&
             profile.country == null &&
             profile.city == null &&
-            profile.originOblast == null) ...[
+            profile.originOblast == null &&
+            profile.originRaion == null) ...[
           SvoiCard(
             onTap: () => Navigator.push(
               context,
