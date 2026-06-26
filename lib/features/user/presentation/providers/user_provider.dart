@@ -1,4 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../../../features/auth/presentation/providers/auth_provider.dart';
+import '../../../../features/auth/domain/auth_state.dart';
 import '../../data/user_repository.dart';
 import '../../domain/user_profile.dart';
 
@@ -36,3 +38,12 @@ final userProfileProvider =
 final userProfileStreamProvider = StreamProvider.family<UserProfile?, String>(
   (ref, uid) => ref.watch(userRepositoryProvider).watchProfile(uid),
 );
+
+/// Профіль поточного авторизованого користувача (stream)
+final currentUserProfileProvider = StreamProvider<UserProfile?>((ref) {
+  final authState = ref.watch(authProvider);
+  if (authState is AuthStateAuthenticated) {
+    return ref.watch(userRepositoryProvider).watchProfile(authState.user.uid);
+  }
+  return Stream.value(null);
+});

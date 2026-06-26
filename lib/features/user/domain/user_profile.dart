@@ -6,8 +6,17 @@ class UserProfile {
   final String displayName;
   final String email;
   final String? photoUrl;
-  final String? city;
+
+  /// Поточне місцезнаходження
   final String? country;
+  final String? city;
+
+  /// Звідки родом (Україна)
+  final String? originOblast;
+  final String? originCity;
+
+  /// Коротко про себе (до 200 символів)
+  final String? bio;
 
   /// Роль: "user" | "organizer" | "admin"
   final String role;
@@ -23,8 +32,11 @@ class UserProfile {
     required this.displayName,
     required this.email,
     this.photoUrl,
-    this.city,
     this.country,
+    this.city,
+    this.originOblast,
+    this.originCity,
+    this.bio,
     required this.role,
     required this.createdAt,
     required this.lastActiveAt,
@@ -38,8 +50,11 @@ class UserProfile {
       displayName: data['displayName'] as String? ?? '',
       email: data['email'] as String? ?? '',
       photoUrl: data['photoUrl'] as String?,
-      city: data['city'] as String?,
       country: data['country'] as String?,
+      city: data['city'] as String?,
+      originOblast: data['originOblast'] as String?,
+      originCity: data['originCity'] as String?,
+      bio: data['bio'] as String?,
       role: data['role'] as String? ?? 'user',
       createdAt: (data['createdAt'] as Timestamp).toDate(),
       lastActiveAt: (data['lastActiveAt'] as Timestamp).toDate(),
@@ -51,8 +66,11 @@ class UserProfile {
         'displayName': displayName,
         'email': email,
         'photoUrl': photoUrl,
-        'city': city,
         'country': country,
+        'city': city,
+        'originOblast': originOblast,
+        'originCity': originCity,
+        'bio': bio,
         'role': role,
         'createdAt': Timestamp.fromDate(createdAt),
         'lastActiveAt': Timestamp.fromDate(lastActiveAt),
@@ -63,8 +81,11 @@ class UserProfile {
     String? displayName,
     String? email,
     String? photoUrl,
-    String? city,
     String? country,
+    String? city,
+    String? originOblast,
+    String? originCity,
+    String? bio,
     String? role,
     DateTime? lastActiveAt,
     Map<String, dynamic>? organizerProfile,
@@ -74,8 +95,11 @@ class UserProfile {
         displayName: displayName ?? this.displayName,
         email: email ?? this.email,
         photoUrl: photoUrl ?? this.photoUrl,
-        city: city ?? this.city,
         country: country ?? this.country,
+        city: city ?? this.city,
+        originOblast: originOblast ?? this.originOblast,
+        originCity: originCity ?? this.originCity,
+        bio: bio ?? this.bio,
         role: role ?? this.role,
         createdAt: createdAt,
         lastActiveAt: lastActiveAt ?? this.lastActiveAt,
