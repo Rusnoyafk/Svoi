@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "279818140161",
+    "project_id": "svoi-dev-9afaf",
+    "storage_bucket": "svoi-dev-9afaf.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:279818140161:android:e8d5fdaebc1baf2c875e00",
+        "android_client_info": {
+          "package_name": "app.svoi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "279818140161-ou4f0r5q4otu1uvbtbstf28mnqm6lvg4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQgpnb9OpMEVc6EVUVvQQW4aT1ayusu6M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "279818140161-ou4f0r5q4otu1uvbtbstf28mnqm6lvg4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "279818140161-6qgaar7nrdq1u9269bl84poldhi9r3ul.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "app.svoi"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

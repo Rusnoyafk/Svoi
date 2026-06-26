@@ -6,7 +6,26 @@
       "Read(//Users/rusnoy/development/flutter/bin/**)",
       "Read(//Users/rusnoy/**)",
       "Bash(/Users/rusnoy/flutter/bin/dart analyze *)",
-      "Bash(/Users/rusnoy/flutter/bin/flutter pub *)"
+      "Bash(/Users/rusnoy/flutter/bin/flutter pub *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(flutter pub *)",
+      "Bash(flutter analyze *)",
+      "Bash(dart analyze *)",
+      "Bash(flutter build *)",
+      "Skill(run)",
+      "Skill(run:*)",
+      "Bash(xcrun simctl *)",
+      "Bash(flutter run *)",
+      "Bash(echo \"PID: $!\")",
+      "Bash(wait 1500)",
+      "Read(//proc/1500/fd/**)",
+      "Bash(jobs -l)",
+      "Bash(tee /tmp/flutter_ios.log)",
+      "Bash(open -a Simulator)",
+      "Bash(flutter devices *)",
+      "Bash(tee /tmp/flutter_ios2.log)",
+      "Bash(tee /tmp/flutter_ios3.log)"
     ]
   }
 }
