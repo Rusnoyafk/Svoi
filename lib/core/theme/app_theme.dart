@@ -173,6 +173,101 @@ abstract final class AppTheme {
     );
   }
 
+  static OutlinedButtonThemeData _buildOutlinedButtonTheme(
+    ColorScheme scheme,
+  ) {
+    return OutlinedButtonThemeData(
+      style: OutlinedButton.styleFrom(
+        foregroundColor: scheme.primary,
+        side: BorderSide(color: scheme.outline),
+        textStyle: GoogleFonts.inter(
+          fontSize: 15,
+          fontWeight: FontWeight.w600,
+          letterSpacing: 0.1,
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+        ),
+        minimumSize: const Size(double.infinity, 52),
+      ),
+    );
+  }
+
+  static InputDecorationTheme _buildInputTheme(ColorScheme scheme) {
+    return InputDecorationTheme(
+      filled: true,
+      fillColor: scheme.surfaceContainerLowest,
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(12),
+        borderSide: BorderSide(color: scheme.outlineVariant),
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(12),
+        borderSide: BorderSide(color: scheme.outlineVariant),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(12),
+        borderSide: BorderSide(color: scheme.primary, width: 1.5),
+      ),
+      errorBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(12),
+        borderSide: BorderSide(color: scheme.error),
+      ),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+      labelStyle: GoogleFonts.inter(
+        fontSize: 14,
+        color: scheme.onSurfaceVariant,
+      ),
+      hintStyle: GoogleFonts.inter(
+        fontSize: 14,
+        color: scheme.onSurfaceVariant,
+      ),
+    );
+  }
+
+  static ChipThemeData _buildChipTheme(ColorScheme scheme) {
+    return ChipThemeData(
+      backgroundColor: scheme.surfaceContainerLow,
+      selectedColor: scheme.primaryContainer,
+      labelStyle: GoogleFonts.inter(
+        fontSize: 13,
+        fontWeight: FontWeight.w500,
+      ),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8),
+        side: BorderSide(color: scheme.outlineVariant),
+      ),
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+    );
+  }
+
+  static SnackBarThemeData _buildSnackBarTheme(ColorScheme scheme) {
+    return SnackBarThemeData(
+      backgroundColor: scheme.inverseSurface,
+      contentTextStyle: GoogleFonts.inter(
+        fontSize: 14,
+        color: scheme.onInverseSurface,
+      ),
+      actionTextColor: scheme.primary,
+      behavior: SnackBarBehavior.floating,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+      ),
+    );
+  }
+
+  static BottomSheetThemeData _buildBottomSheetTheme(ColorScheme scheme) {
+    return BottomSheetThemeData(
+      backgroundColor: scheme.surface,
+      surfaceTintColor: Colors.transparent,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      showDragHandle: true,
+      dragHandleColor: scheme.outlineVariant,
+    );
+  }
+
   // ── Світла тема ───────────────────────────────────────────────────────────
 
   static ThemeData get light {
@@ -190,6 +285,11 @@ abstract final class AppTheme {
       tabBarTheme: _buildTabBarTheme(scheme),
       cardTheme: _buildCardTheme(scheme),
       filledButtonTheme: _buildFilledButtonTheme(scheme),
+      outlinedButtonTheme: _buildOutlinedButtonTheme(scheme),
+      inputDecorationTheme: _buildInputTheme(scheme),
+      chipTheme: _buildChipTheme(scheme),
+      snackBarTheme: _buildSnackBarTheme(scheme),
+      bottomSheetTheme: _buildBottomSheetTheme(scheme),
       scaffoldBackgroundColor: scheme.surface,
     );
   }
@@ -211,6 +311,11 @@ abstract final class AppTheme {
       tabBarTheme: _buildTabBarTheme(scheme),
       cardTheme: _buildCardTheme(scheme),
       filledButtonTheme: _buildFilledButtonTheme(scheme),
+      outlinedButtonTheme: _buildOutlinedButtonTheme(scheme),
+      inputDecorationTheme: _buildInputTheme(scheme),
+      chipTheme: _buildChipTheme(scheme),
+      snackBarTheme: _buildSnackBarTheme(scheme),
+      bottomSheetTheme: _buildBottomSheetTheme(scheme),
       scaffoldBackgroundColor: scheme.surface,
     );
   }
